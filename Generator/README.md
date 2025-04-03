@@ -2,19 +2,14 @@
 此项目是一个基于[zint库](https://zint.org.uk/manual/chapter/1)的二维码生成器。它可以批量生成一组二维码，并支持自定义内容和输出格式，适用于需要高效生成二维码的场景
 
 ## 运行之前
-1. 安装[CMake](https://cmake.org/download/)
-2. 安装[Git](https://git-scm.com/downloads)
-3. 确保你已经安装zint库：
-    1. 下载[zint库源代码](https://github.com/zint/zint)
-    2. 根据[编译说明](https://github.com/zint/zint/blob/master/win32/README)编译zint库。如果不需要图形界面，可以跳过其中包含**Qt**的部分
-4. 配置zint库到Visual Studio中：
+1. 配置zint库到Visual Studio中：
     1. 打开`PropertySheet.props`文件
     2. 将其中的`<ZintDir>`部分更改为你本地的zint库路径，并保存
     3. 打开Visual Studio的属性管理器，在含有Win32平台的属性上右击，选择添加属性表`PropertySheet.props`即可![alt text](./readme_dpdc/image.png)
     4. 选择x86/Win32平台进行编译，此时会提示运行失败：找不到`zint.dll`
     5. 在`<ZintDir>\win32\Release`或者`<ZintDir>\win32\Debug`目录下找到`zint.dll`，复制到本项目的`./Debug`或者`./Release`目录下（此操作旨在将`zint.dll`与`Generator.exe`置于同一目录）。
 
-`main.cpp`: 该文件为程序的主入口，可以在此编程，通过修改`msgs`变量的值以改变输出的二维码对应的加密内容。代码文件首部还有其他常量可以修改，目前支持的有：
+2. `main.cpp`: 该文件为程序的主入口，可以在此编程，通过修改`msgs`变量的值以改变输出的二维码对应的加密内容。代码文件首部还有其他常量可以修改，目前支持的有：
 ```cpp
 // 二维码保存目录
 static const string save_root = "./fruits/";
