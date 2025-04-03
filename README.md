@@ -1,5 +1,5 @@
  ## QRCodeFactory
-利用`zint库`和`pyzbar库`进行二维码的生成和识别
+利用`zint库`和`zbar库`进行二维码的生成和识别
 
 ## 二维码生成
 `Generator`项目可根据特定的输入文本生成一系列二维码
@@ -14,3 +14,4 @@
 
 ## 二维码识别
  `Scanner`项目可以识别给定的二维码图片，具体使用说明[请见](./Scanner/README.md)
+ 本项目参考自[CSDN](https://blog.csdn.net/sdu_DYL/article/details/120528949#t0)
